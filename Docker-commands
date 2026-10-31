@@ -1,0 +1,202 @@
+# 🐳 Docker Commands Cheat Sheet
+
+A simple guide to learn Docker commands with easy explanations.
+
+## 1. Basic Commands
+
+| Command            | Use                     |
+| ------------------ | ----------------------- |
+| `docker --version` | Check Docker version    |
+| `docker info`      | Show Docker information |
+| `docker help`      | Show help               |
+| `docker ps`        | Show running containers |
+| `docker ps -a`     | Show all containers     |
+
+## 2. Docker Image Commands
+
+| Command                      | Use                  |
+| ---------------------------- | -------------------- |
+| `docker images`              | Show all images      |
+| `docker pull nginx`          | Download an image    |
+| `docker build -t myapp .`    | Build an image       |
+| `docker rmi nginx`           | Delete an image      |
+| `docker image inspect nginx` | Show image details   |
+| `docker tag myapp myapp:v1`  | Create an image tag  |
+| `docker image prune`         | Remove unused images |
+
+## 3. Docker Container Commands
+
+| Command                      | Use                        |
+| ---------------------------- | -------------------------- |
+| `docker run nginx`           | Create and run a container |
+| `docker run -d nginx`        | Run in background          |
+| `docker run -it ubuntu bash` | Open Ubuntu terminal       |
+| `docker start CONTAINER`     | Start a container          |
+| `docker stop CONTAINER`      | Stop a container           |
+| `docker restart CONTAINER`   | Restart a container        |
+| `docker rm CONTAINER`        | Delete a container         |
+| `docker kill CONTAINER`      | Force stop a container     |
+| `docker rename OLD NEW`      | Rename a container         |
+| `docker pause CONTAINER`     | Pause a container          |
+| `docker unpause CONTAINER`   | Resume a container         |
+
+## 4. Port Mapping Commands
+
+| Command                       | Use                                         |
+| ----------------------------- | ------------------------------------------- |
+| `docker run -p 8080:80 nginx` | Connect host port 8080 to container port 80 |
+| `docker port CONTAINER`       | Show container ports                        |
+
+## 5. Docker Exec Commands
+
+| Command                          | Use                        |
+| -------------------------------- | -------------------------- |
+| `docker exec -it CONTAINER bash` | Enter container terminal   |
+| `docker exec CONTAINER ls`       | List container files       |
+| `docker exec CONTAINER pwd`      | Show current directory     |
+| `docker exec CONTAINER env`      | Show environment variables |
+
+## 6. Docker Logs Commands
+
+| Command                           | Use                       |
+| --------------------------------- | ------------------------- |
+| `docker logs CONTAINER`           | Show container logs       |
+| `docker logs -f CONTAINER`        | Show live logs            |
+| `docker logs --tail 50 CONTAINER` | Show last 50 log lines    |
+| `docker stats`                    | Show CPU and memory usage |
+| `docker top CONTAINER`            | Show running processes    |
+
+## 7. Docker Hub Commands
+
+| Command                  | Use                        |
+| ------------------------ | -------------------------- |
+| `docker login`           | Login to Docker Hub        |
+| `docker logout`          | Logout from Docker Hub     |
+| `docker search nginx`    | Search Docker images       |
+| `docker pull nginx`      | Download an image          |
+| `docker push USER/IMAGE` | Upload image to Docker Hub |
+
+## 8. Docker Network Commands
+
+| Command                                     | Use                          |
+| ------------------------------------------- | ---------------------------- |
+| `docker network ls`                         | Show networks                |
+| `docker network create mynet`               | Create a network             |
+| `docker network inspect mynet`              | Show network details         |
+| `docker network connect mynet CONTAINER`    | Connect container to network |
+| `docker network disconnect mynet CONTAINER` | Disconnect container         |
+| `docker network rm mynet`                   | Delete network               |
+
+## 9. Docker Volume Commands
+
+| Command                       | Use                   |
+| ----------------------------- | --------------------- |
+| `docker volume ls`            | Show volumes          |
+| `docker volume create myvol`  | Create volume         |
+| `docker volume inspect myvol` | Show volume details   |
+| `docker volume rm myvol`      | Delete volume         |
+| `docker volume prune`         | Remove unused volumes |
+
+## 10. Docker Compose Commands
+
+| Command                  | Use                      |
+| ------------------------ | ------------------------ |
+| `docker compose version` | Check Compose version    |
+| `docker compose up`      | Start services           |
+| `docker compose up -d`   | Start in background      |
+| `docker compose down`    | Stop and remove services |
+| `docker compose ps`      | Show services            |
+| `docker compose logs`    | Show logs                |
+| `docker compose build`   | Build services           |
+| `docker compose restart` | Restart services         |
+| `docker compose pull`    | Download service images  |
+
+## 11. Docker System Commands
+
+| Command                  | Use                       |
+| ------------------------ | ------------------------- |
+| `docker system df`       | Show disk usage           |
+| `docker system info`     | Show system information   |
+| `docker system events`   | Show Docker events        |
+| `docker system prune`    | Remove unused Docker data |
+| `docker container prune` | Remove stopped containers |
+| `docker network prune`   | Remove unused networks    |
+
+**Warning:** Cleanup commands can delete Docker resources. Check before executing them.
+
+## 12. Dockerfile Instructions
+
+| Instruction  | Use                            |
+| ------------ | ------------------------------ |
+| `FROM`       | Select base image              |
+| `RUN`        | Execute build commands         |
+| `CMD`        | Set default command            |
+| `ENTRYPOINT` | Set main application command   |
+| `COPY`       | Copy files                     |
+| `ADD`        | Copy files with extra features |
+| `WORKDIR`    | Set working directory          |
+| `EXPOSE`     | Document container port        |
+| `ENV`        | Set environment variables      |
+| `ARG`        | Set build arguments            |
+| `USER`       | Set container user             |
+| `VOLUME`     | Define storage location        |
+| `LABEL`      | Add image information          |
+
+## 13. Simple Docker Practical
+
+**Step 1: Download Nginx**
+
+```bash
+docker pull nginx
+```
+
+**Step 2: Run Container**
+
+```bash
+docker run -d -p 8080:80 --name mywebsite nginx
+```
+
+**Step 3: Check Container**
+
+```bash
+docker ps
+```
+
+**Step 4: Open Browser**
+
+```text
+http://localhost:8080
+```
+
+**Step 5: Check Logs**
+
+```bash
+docker logs mywebsite
+```
+
+**Step 6: Stop Container**
+
+```bash
+docker stop mywebsite
+```
+
+**Step 7: Remove Container**
+
+```bash
+docker rm mywebsite
+```
+
+---
+
+## 👨‍💻 Author
+
+**Yash Pawar**
+
+Cloud & DevOps | AWS | Linux | Docker | Kubernetes
+
+* GitHub: https://github.com/CodewithYash77
+* LinkedIn: https://linkedin.com/in/yashpawar11092005
+
+⭐ If this guide helps you, give this repository a Star!
+
+**Keep Learning and Keep Building! 🚀**
